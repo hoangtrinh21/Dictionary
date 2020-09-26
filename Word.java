@@ -10,7 +10,7 @@ public class Word {
     public void setWordTarget(String x) {
         this.word_target = x;
     }
-    public void steWordExplain(String x) {
+    public void setWordExplain(String x) {
         this.word_explain = x;
     }
     public Word() {
