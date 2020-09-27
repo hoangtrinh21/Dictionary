@@ -7,12 +7,11 @@ public class DictionaryManagement {
     void insertFromCommandline(Dictionary list){
         Scanner scanner=new Scanner(System.in);
         int n=scanner.nextInt();
+            scanner.nextLine();
         Word x = new Word();
         for(int i=0;i<n;i++){
-            String a =scanner.nextLine();
-            scanner.nextLine();
+            String a = scanner.nextLine();
             String b = scanner.nextLine();
-
             x.setWordTarget(a);
             x.setWordExplain(b);
             list.listWord.add(x);

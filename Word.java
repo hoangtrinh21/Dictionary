@@ -21,4 +21,7 @@ public class Word {
         this.word_target = word_target;
         this.word_explain = word_explain;
     }
+    public void print(){
+        System.out.println(this.word_target + "   " + this.word_explain);
+    }
 }
