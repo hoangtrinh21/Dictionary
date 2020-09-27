@@ -8,8 +8,8 @@ public class DictionaryManagement {
         Scanner scanner=new Scanner(System.in);
         int n=scanner.nextInt();
             scanner.nextLine();
-        Word x = new Word();
         for(int i=0;i<n;i++){
+            Word x = new Word();
             String a = scanner.nextLine();
             String b = scanner.nextLine();
             x.setWordTarget(a);
