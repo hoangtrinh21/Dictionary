@@ -17,23 +17,34 @@ public class DictionaryManagement {
         }
     }
     public void addFile(Dictionary list) throws IOException {
-        Scanner scanner=new Scanner(Paths.get("C:\\Users\\leman\\IdeaProjects\\lemanhlinh\\src\\dictionaries.txt"),"UTF-8");while(scanner.hasNext()){
-            while(scanner.hasNextLine()){
-                Word x=new Word();
-                String a=scanner.next();
+        Scanner scanner = new Scanner(Paths.get("dictionaries.txt"),"UTF-8");
+        while (scanner.hasNext()) {
+            while (scanner.hasNextLine()) {
+                Word x = new Word();
+                String a = scanner.next();
                 x.setWordTarget(a);
-                String b=scanner.nextLine();
-                for(int i=0;i<10;i++){
-                    if(!Character.toString(b.charAt(i)).equals(" ")){
-                        String c=b.substring(i);
-                        x.setWordExplain(c);
-                        break;
-                    }
-                }
+                String  b = scanner.nextLine();
+                // for (int i = 0; i < b.length(); i++) { // xoa khoang trang thua
+                //     if (!Character.toString(b.charAt(i)).equals(" ")) {
+                //         String c = b.substring(i);
+                //         x.setWordExplain(c);
+                //         break;
+                //     }
+                // }
+                b = b.trim().replaceAll(" +", " ");
+                x.setWordEplain(b);
                 list.listWord.add(x);
             }
         }
         scanner.close();
+    }
+
+    /**
+     * lookup.
+     * @param tar
+     */
+    public Word dictionnayLookup(String tar, Array) {
+
     }
 }
 // hel lo    xin chao
