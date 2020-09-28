@@ -32,7 +32,7 @@ public class DictionaryManagement {
                 //     }
                 // }
                 b = b.trim().replaceAll(" +", " ");
-                x.setWordEplain(b);
+                x.setWordExplain(b);
                 list.listWord.add(x);
             }
         }
@@ -43,8 +43,8 @@ public class DictionaryManagement {
      * lookup.
      * @param tar
      */
-    public Word dictionnayLookup(String tar, Array) {
-
-    }
+//    public Word dictionaryLookup(Dictionary list, String tar) {
+//        return list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null);
+//    }
 }
 // hel lo    xin chao

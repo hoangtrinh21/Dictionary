@@ -7,5 +7,7 @@ public class Main {
         DictionaryManagement in = new DictionaryManagement();
         in.insertFromCommandline(lWord);
         show.showAllWords(lWord);
+//        Word a = in.dictionaryLookup(lWord, "Hello");
+//        System.out.println(a.getWordExplain());
     }
 }
