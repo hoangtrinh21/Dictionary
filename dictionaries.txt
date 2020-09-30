@@ -1,0 +1,4 @@
+hello       xin chao
+air         khong khi
+plane       may bay
+word	    tu
