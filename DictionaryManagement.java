@@ -16,7 +16,7 @@ public class DictionaryManagement {
             list.listWord.add(x);
         }
     }
-    public void addFile(Dictionary list) throws IOException {
+    public void insertFromFile(Dictionary list) throws IOException {
         Scanner scanner = new Scanner(Paths.get("dictionaries.txt"),"UTF-8");
         while (scanner.hasNext()) {
             while (scanner.hasNextLine()) {
@@ -38,13 +38,42 @@ public class DictionaryManagement {
         }
         scanner.close();
     }
+    public Word wordlook(Dictionary list, String tar){
+        return list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null);
+    }
+    public void dictionaryLookup(Dictionary list, String tar){
+        Word a=wordlook(list,tar);
+        System.out.println(a.getWordTarget());
+    }
+    public void suaXoaThem(Dictionary list){
+        Scanner scanner=new Scanner(System.in);
+        String string=scanner.nextLine();
+        Word word1=wordlook(list,string);
+        if(word1==null){
+            System.out.println("Not found");
+            System.out.println("hay nhap y nghia cua tu ban vua chon");
+            String yNghia=scanner.nextLine();
+            Word tuMoi=new Word(string,yNghia);
+        }
+        else{
+            System.out.println(word1.getWordExplain());
+            System.out.println("ban co muon sua ,xoa hoac giu nguyen");
+            System.out.println("xoa nhan 1 sua nhan 2 giu nguyen 3");
+            int n=scanner.nextInt();
+            if(n==1) {
+                String sua=scanner.nextLine();
+                list.listWord.stream().filter(word -> string.equals(word.getWordTarget())).findFirst().orElse(null).setWordExplain(sua);
+            }
+            else{
+                //list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null)
+                if(n==2){
+                    //list.listWord.stream().filter(word -> string.equals(word.getWordTarget())).findFirst().orElse(null).
+                }
+                else{
+                    return ;
+                }
+            }
+        }
+    }
 
-    /**
-     * lookup.
-     * @param tar
-     */
-//    public Word dictionaryLookup(Dictionary list, String tar) {
-//        return list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null);
-//    }
 }
-// hel lo    xin chao
