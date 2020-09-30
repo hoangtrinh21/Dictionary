@@ -11,5 +11,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String tar = sc.nextLine();
         in.dictionaryLookup(lWord, tar);
+        Word a = in.wordlook(lWord, tar);
+        in.suaXoaThem(lWord);
+        show.showAllWords((lWord));
     }
 }

@@ -7,12 +7,10 @@ public class DictionaryManagement {
         Scanner scanner=new Scanner(System.in);
         int n = scanner.nextInt();
         scanner.nextLine();
-        for (int i = 0; i < n; i ++){
-            Word x = new Word();
+        for (int i = 0; i < n; i ++) {
             String a = scanner.nextLine();
             String b = scanner.nextLine();
-            x.setWordTarget(a);
-            x.setWordExplain(b);
+            Word x = new Word(a, b);
             list.listWord.add(x);
         }
     }
@@ -51,30 +49,29 @@ public class DictionaryManagement {
 
     public void suaXoaThem(Dictionary list){
         Scanner scanner = new Scanner(System.in);
-        String string = scanner.nextLine();
-        Word word1 = wordlook(list, string);
+        String tudexoa = scanner.nextLine();
+        Word word1 = wordlook(list, tudexoa);
         if (word1 == null){
             System.out.println("Not found");
-            System.out.println("hay nhap y nghia cua tu ban vua chon");
+            System.out.println("Hãy nhập ý nghĩa của từ bạn vừa tìm");
             String yNghia = scanner.nextLine();
-            Word tuMoi = new Word(string,yNghia);
+            Word tuMoi = new Word(tudexoa, yNghia);
+            list.listWord.add(tuMoi);
         }
         else {
             System.out.println(word1.getWordExplain());
-            System.out.println("ban co muon sua ,xoa hoac giu nguyen");
-            System.out.println("xoa nhan 1 sua nhan 2 giu nguyen 3");
-            int n=scanner.nextInt();
+            System.out.println("Bạn có muốn sửa, xóa hoặc giữ nguyên?");
+            System.out.println("Sửa nhấn 1 /n Xóa nhấn 2 /n Giữ nguyên nhấn 3");
+            int n = scanner.nextInt();
             if (n == 1) {
                 String sua = scanner.nextLine();
-                list.listWord.stream().filter(word -> string.equals(word.getWordTarget())).findFirst().orElse(null).setWordExplain(sua);
+                word1.setWordExplain(sua);
             }
             else {
                 //list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null)
-                if (n == 2){
+                if (n == 2) {
                     //list.listWord.stream().filter(word -> string.equals(word.getWordTarget())).findFirst().orElse(null).
-                }
-                else {
-                    return ;
+                    list.listWord.remove(word1);
                 }
             }
         }
