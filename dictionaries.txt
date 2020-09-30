@@ -1,4 +1,5 @@
-hello       xin chao
-air         khong khi
-plane       may bay
-word	    tu
+Hello   Xin Chào
+Bye Tạm biệt
+Morning Buổi sáng
+Evening Buổi chiều
+Night   Buổi tối

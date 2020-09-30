@@ -47,6 +47,14 @@ public class DictionaryManagement {
         a.print();
     }
 
+    public void dictionaryAdvanced(Dictionary list) throws IOException {
+        insertFromFile(list);
+        DictionaryCommandline.showAllWords(list);
+        Scanner sc = new Scanner(System.in);
+        String tar = sc.next();
+        dictionaryLookup(list, tar);
+    }
+
     public void suaXoaThem(Dictionary list){
         Scanner scanner = new Scanner(System.in);
         String tudexoa = scanner.nextLine();
