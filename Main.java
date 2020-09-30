@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -7,7 +8,8 @@ public class Main {
         DictionaryManagement in = new DictionaryManagement();
         in.insertFromCommandline(lWord);
         show.showAllWords(lWord);
-//        Word a = in.dictionaryLookup(lWord, "Hello");
-//        System.out.println(a.getWordExplain());
+        Scanner sc = new Scanner(System.in);
+        String tar = sc.nextLine();
+        in.dictionaryLookup(lWord, tar);
     }
 }

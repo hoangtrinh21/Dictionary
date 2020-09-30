@@ -31,7 +31,7 @@ public class Dictionary {
                 break;
             }
         }
-    }
+    }   
     public void setWord(String tuCanSua,String yNghia) // sua tu bi sai
     {
         int n1=tuCanSua.length();
