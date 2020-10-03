@@ -75,6 +75,7 @@ public class DictionaryManagement {
             System.out.println("Sửa nhấn 1 /n Xóa nhấn 2 /n Giữ nguyên nhấn 3");
             int n = scanner.nextInt();
             if (n == 1) {
+                scanner.nextLine();
                 String sua = scanner.nextLine();
                 word1.setWordExplain(sua);
             }
