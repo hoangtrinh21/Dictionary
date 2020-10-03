@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class DictionaryManagement {
-    void insertFromCommandline(Dictionary list){
+    void insertFromCommandline(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         Scanner scanner=new Scanner(System.in);
         int n = scanner.nextInt();
         scanner.nextLine();
@@ -16,6 +16,7 @@ public class DictionaryManagement {
             Word x = new Word(a, b);
             list.listWord.add(x);
         }
+        dictionaryExportToFile(list);
     }
 
     public void insertFromFile(Dictionary list) throws IOException {
@@ -50,14 +51,6 @@ public class DictionaryManagement {
         a.print();
     }
 
-    public void dictionaryAdvanced(Dictionary list) throws IOException {
-        insertFromFile(list);
-        DictionaryCommandline.showAllWords(list);
-        Scanner sc = new Scanner(System.in);
-        String tar = sc.next();
-        dictionaryLookup(list, tar);
-    }
-
     public void suaXoaThem(Dictionary list){
         Scanner scanner = new Scanner(System.in);
         String tudexoa = scanner.nextLine();
@@ -72,7 +65,7 @@ public class DictionaryManagement {
         else {
             System.out.println(word1.getWordExplain());
             System.out.println("Bạn có muốn sửa, xóa hoặc giữ nguyên?");
-            System.out.println("Sửa nhấn 1 /n Xóa nhấn 2 /n Giữ nguyên nhấn 3");
+            System.out.println("Sửa nhấn 1" + '\n' + "Xóa nhấn 2" + '\n' + "Giữ nguyên nhấn 3");
             int n = scanner.nextInt();
             if (n == 1) {
                 scanner.nextLine();
@@ -89,7 +82,7 @@ public class DictionaryManagement {
         }
     }
 
-    public void suafile(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
+    public void dictionaryExportToFile(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         PrintWriter printWriter=new PrintWriter("dictionaries.txt","UTF-8");
         for(int i=0;i<list.listWord.size();i++){
             printWriter.println(list.listWord.get(i).getWordTarget()+'\t'+list.listWord.get(i).getWordExplain());
