@@ -39,4 +39,13 @@ public class DictionaryCommandline {
         }
         return a;
     }
+    public Dictionary dictionarySearcher(Dictionary a, String search) {
+        Dictionary result = new Dictionary();
+        for (Word i : a.listWord) {
+            if (i.getWordTarget().startsWith(search)) {
+                result.listWord.add(i);
+            }
+        }
+        return result;
+    }
 }

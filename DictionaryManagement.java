@@ -12,6 +12,10 @@ public class DictionaryManagement {
         scanner.nextLine();
         for (int i = 0; i < n; i ++) {
             String a = scanner.nextLine();
+            if (dictionaryLookup(list, a)) {
+                System.out.println("Trong từ điển đã có từ này.");
+                continue;
+            }
             String b = scanner.nextLine();
             Word x = new Word(a, b);
             list.listWord.add(x);
@@ -46,9 +50,12 @@ public class DictionaryManagement {
         return list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null);
     }
 
-    public void dictionaryLookup(Dictionary list, String tar){
-        Word a = wordlook(list, tar);
-        a.print();
+    public boolean dictionaryLookup(Dictionary list, String tar){
+        Word a = list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null);
+        if (a == null) {
+            return false;
+        }
+        return true;
     }
 
     public void suaXoaThem(Dictionary list){

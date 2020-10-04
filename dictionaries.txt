@@ -1,5 +1,8 @@
-Hello   Xin Chào
-Bye Tạm biệt
-Morning Buổi sáng
-Evening Buổi chiều
-Night   Buổi tối
+Hello	Chào
+Bye	Tạm biệt
+Hen	Gà mái
+Help	Giúp đỡ
+Hi	Chào
+Run	Chạy
+Walk	Đi bộ
+Jump	Nhảy

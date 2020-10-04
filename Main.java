@@ -6,13 +6,11 @@ public class Main {
         Dictionary lWord = new Dictionary();
         DictionaryCommandline show = new DictionaryCommandline();
         DictionaryManagement in = new DictionaryManagement();
+        in.insertFromFile(lWord);
         in.insertFromCommandline(lWord);
         show.showAllWords(lWord);
         Scanner sc = new Scanner(System.in);
-        String tar = sc.nextLine();
-        in.dictionaryLookup(lWord, tar);
-        Word a = in.wordlook(lWord, tar);
-        in.suaXoaThem(lWord);
-        show.showAllWords((lWord));
+        String search = sc.next();
+        show.showAllWords(show.dictionarySearcher(lWord, search));
     }
 }
