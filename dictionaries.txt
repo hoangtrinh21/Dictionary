@@ -1,8 +1,10 @@
-Hello	Chào
-Bye	Tạm biệt
-Hen	Gà mái
-Help	Giúp đỡ
-Hi	Chào
-Run	Chạy
-Walk	Đi bộ
-Jump	Nhảy
+hello	xin chào
+bye	tạm biệt
+morning	buổi sáng
+evening	buổi chiều
+night	buổi tối
+good	tot
+bad	toi
+beautiful	dep
+love	|yeu
+sleep	ngu

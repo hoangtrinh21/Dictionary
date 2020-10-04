@@ -8,9 +8,11 @@ import java.util.Scanner;
 public class DictionaryManagement {
     void insertFromCommandline(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         Scanner scanner=new Scanner(System.in);
+        System.out.print("Số từ bạn muốn thêm là: ");
         int n = scanner.nextInt();
         scanner.nextLine();
-        for (int i = 0; i < n; i ++) {
+        for (int i = 0; i < n; i++) {
+            System.out.print("Nhập từ bạn muốn thêm ");
             String a = scanner.nextLine();
             if (dictionaryLookup(list, a)) {
                 System.out.println("Trong từ điển đã có từ này.");
@@ -19,6 +21,7 @@ public class DictionaryManagement {
             String b = scanner.nextLine();
             Word x = new Word(a, b);
             list.listWord.add(x);
+            System.out.println("Đã thêm " + x.getWordTarget() + "vào từ điển");
         }
         dictionaryExportToFile(list);
     }
@@ -31,13 +34,6 @@ public class DictionaryManagement {
                 String a = scanner.next();
                 x.setWordTarget(a);
                 String  b = scanner.nextLine();
-                // for (int i = 0; i < b.length(); i++) { // xoa khoang trang thua
-                //     if (!Character.toString(b.charAt(i)).equals(" ")) {
-                //         String c = b.substring(i);
-                //         x.setWordExplain(c);
-                //         break;
-                //     }
-                // }
                 b = b.trim().replaceAll(" +", " ");
                 x.setWordExplain(b);
                 list.listWord.add(x);
@@ -47,44 +43,57 @@ public class DictionaryManagement {
     }
 
     public Word wordlook(Dictionary list, String tar){
-        return list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null);
+        Word a = list.listWord.stream().filter(w -> tar.equals(w.getWordTarget())).findFirst().orElse(null);
+        return a;
     }
 
     public boolean dictionaryLookup(Dictionary list, String tar){
-        Word a = list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null);
+        Word a = list.listWord.stream().filter(w -> tar.equals(w.getWordTarget())).findFirst().orElse(null);
         if (a == null) {
             return false;
         }
         return true;
     }
 
-    public void suaXoaThem(Dictionary list){
+    public void suaXoaThem(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         Scanner scanner = new Scanner(System.in);
-        String tudexoa = scanner.nextLine();
-        Word word1 = wordlook(list, tudexoa);
-        if (word1 == null){
-            System.out.println("Not found");
-            System.out.println("Hãy nhập ý nghĩa của từ bạn vừa tìm");
-            String yNghia = scanner.nextLine();
-            Word tuMoi = new Word(tudexoa, yNghia);
-            list.listWord.add(tuMoi);
-        }
-        else {
-            System.out.println(word1.getWordExplain());
-            System.out.println("Bạn có muốn sửa, xóa hoặc giữ nguyên?");
-            System.out.println("Sửa nhấn 1" + '\n' + "Xóa nhấn 2" + '\n' + "Giữ nguyên nhấn 3");
+        String w = new String();
+        
+        while (true) {
+            System.out.println("Bạn muốn làm gì tiếp theo?" + '\n'
+                        + "1: Sửa từ" + '\n' + "2: Xóa từ" + '\n' + "3: Thêm từ" + '\n' + "4: Trở về");
             int n = scanner.nextInt();
+            scanner.nextLine();
             if (n == 1) {
-                scanner.nextLine();
-                String sua = scanner.nextLine();
-                word1.setWordExplain(sua);
-            }
-            else {
-                //list.listWord.stream().filter(word -> tar.equals(word.getWordTarget())).findFirst().orElse(null)
-                if (n == 2) {
-                    //list.listWord.stream().filter(word -> string.equals(word.getWordTarget())).findFirst().orElse(null).
-                    list.listWord.remove(word1);
+                System.out.println("Từ bạn muốn sửa là?");
+                w = scanner.nextLine();
+                if (!dictionaryLookup(list, w)) {
+                    System.out.println("Từ này không có trong từ điển.");
+                } else {
+                    Word look = wordlook(list, w);
+                    look.print();
+                    System.out.print("Nghĩa mới của " + look.getWordTarget() + " là: ");
+                    String ex = scanner.nextLine();
+                    look.setWordExplain(ex);
                 }
+            }
+            if (n == 2) {
+                System.out.print("Từ bạn muốn xóa là: ");
+                w = scanner.next();
+                if (!dictionaryLookup(list, w)) {
+                    System.out.println("Từ này không có trong từ điển.");
+                } else {
+                    Word look = wordlook(list, w);
+                    list.listWord.remove(look);
+                    System.out.println("Đã xóa.");
+                }
+            }
+            if (n == 3) {
+                insertFromCommandline(list);
+            }
+            if (n == 4) {
+                dictionaryExportToFile(list);
+                break;
             }
         }
     }
@@ -92,7 +101,7 @@ public class DictionaryManagement {
     public void dictionaryExportToFile(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         PrintWriter printWriter=new PrintWriter("dictionaries.txt","UTF-8");
         for(int i=0;i<list.listWord.size();i++){
-            printWriter.println(list.listWord.get(i).getWordTarget()+'\t'+list.listWord.get(i).getWordExplain());
+            printWriter.println(list.listWord.get(i).getWordTarget().toLowerCase()+'\t'+list.listWord.get(i).getWordExplain().toLowerCase());
         }
         printWriter.close();
     }
