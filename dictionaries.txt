@@ -8,3 +8,11 @@ bad	toi
 beautiful	dep
 love	|yeu
 sleep	ngu
+new	mới
+old	cũ
+fan	quạt
+father	bố
+mother	mẹ
+son	con trai
+fast	nhanh
+tiger	con hổ

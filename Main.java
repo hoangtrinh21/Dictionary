@@ -12,13 +12,17 @@ public class Main {
         in.insertFromFile(lWord);
         //show.showAllWords(lWord);
         while (true) {
+            System.out.println("------------------------------------------------");
             System.out.println("Bạn muốn làm gì?" + '\n' +
                                 "1: Tra từ" + '\n' + 
                                 "2: Sửa, thêm , xóa" + '\n' +
-                                "3: Thoát");
+                                "3: Hiện toàn bộ thư viện" + '\n' +
+                                "4: Thoát");
+            System.out.println("------------------------------------------------");
             int x = scan.nextInt();
             scan.nextLine();
             if (x == 1) {
+                System.out.println("-------------------");
                 System.out.println("Từ bạn muốn tìm là?");
                 String search = scan.nextLine().toLowerCase();
                 
@@ -28,6 +32,9 @@ public class Main {
                 in.suaXoaThem(lWord);
             }
             if (x == 3) {
+                show.showAllWords(lWord);
+            }
+            if (x == 4) {
                 return;
             }
         }

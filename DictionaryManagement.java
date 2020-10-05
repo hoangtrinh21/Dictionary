@@ -8,21 +8,16 @@ import java.util.Scanner;
 public class DictionaryManagement {
     void insertFromCommandline(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         Scanner scanner=new Scanner(System.in);
-        System.out.print("Số từ bạn muốn thêm là: ");
-        int n = scanner.nextInt();
-        scanner.nextLine();
-        for (int i = 0; i < n; i++) {
-            System.out.print("Nhập từ bạn muốn thêm ");
-            String a = scanner.nextLine().toLowerCase();
-            if (dictionaryLookup(list, a)) {
-                System.out.println("Trong từ điển đã có từ này.");
-                continue;
-            }
-            String b = scanner.nextLine();
-            Word x = new Word(a, b);
-            list.listWord.add(x);
-            System.out.println("Đã thêm " + x.getWordTarget() + "vào từ điển");
+        System.out.print("Nhập từ bạn muốn thêm: ");
+        String a = scanner.nextLine().toLowerCase();
+        if (dictionaryLookup(list, a)) {
+            System.out.println("Trong từ điển đã có từ này.");
         }
+        System.out.print("Nghĩa tiếng Việt của " + a + " là: ");
+        String b = scanner.nextLine();
+        Word x = new Word(a, b);
+        list.listWord.add(x);
+        System.out.println("Đã thêm " + x.getWordTarget() + " vào từ điển.");
         dictionaryExportToFile(list);
     }
 
@@ -31,11 +26,10 @@ public class DictionaryManagement {
         while (scanner.hasNext()) {
             while (scanner.hasNextLine()) {
                 Word x = new Word();
-                String a = scanner.next().toLowerCase();
-                x.setWordTarget(a);
-                String  b = scanner.nextLine();
-                b = b.trim().replaceAll(" +", " ");
-                x.setWordExplain(b);
+                String s = scanner.nextLine();
+                String[] word = s.split("\\t", 2);
+                x.setWordTarget(word[0]);
+                x.setWordExplain(word[1]);
                 list.listWord.add(x);
             }
         }
@@ -60,8 +54,10 @@ public class DictionaryManagement {
         String w = new String();
         
         while (true) {
+            System.out.println("------------------------------------------------");
             System.out.println("Bạn muốn làm gì tiếp theo?" + '\n'
                         + "1: Sửa từ" + '\n' + "2: Xóa từ" + '\n' + "3: Thêm từ" + '\n' + "4: Trở về");
+            System.out.println("------------------------------------------------");
             int n = scanner.nextInt();
             scanner.nextLine();
             if (n == 1) {
