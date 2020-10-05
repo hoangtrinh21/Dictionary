@@ -16,7 +16,7 @@ public class DictionaryCommandline {
         in.insertFromFile(list);
         showAllWords(list);
         Scanner sc = new Scanner(System.in);
-        String tar = sc.next();
+        String tar = sc.next().toLowerCase();
         in.dictionaryLookup(list, tar);
     }
 

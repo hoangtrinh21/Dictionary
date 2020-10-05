@@ -20,7 +20,7 @@ public class Main {
             scan.nextLine();
             if (x == 1) {
                 System.out.println("Từ bạn muốn tìm là?");
-                String search = scan.nextLine();
+                String search = scan.nextLine().toLowerCase();
                 
                 show.dictionarySearcher(lWord, search);
             }

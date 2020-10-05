@@ -13,7 +13,7 @@ public class DictionaryManagement {
         scanner.nextLine();
         for (int i = 0; i < n; i++) {
             System.out.print("Nhập từ bạn muốn thêm ");
-            String a = scanner.nextLine();
+            String a = scanner.nextLine().toLowerCase();
             if (dictionaryLookup(list, a)) {
                 System.out.println("Trong từ điển đã có từ này.");
                 continue;
@@ -31,7 +31,7 @@ public class DictionaryManagement {
         while (scanner.hasNext()) {
             while (scanner.hasNextLine()) {
                 Word x = new Word();
-                String a = scanner.next();
+                String a = scanner.next().toLowerCase();
                 x.setWordTarget(a);
                 String  b = scanner.nextLine();
                 b = b.trim().replaceAll(" +", " ");
@@ -66,7 +66,7 @@ public class DictionaryManagement {
             scanner.nextLine();
             if (n == 1) {
                 System.out.println("Từ bạn muốn sửa là?");
-                w = scanner.nextLine();
+                w = scanner.nextLine().toLowerCase();
                 if (!dictionaryLookup(list, w)) {
                     System.out.println("Từ này không có trong từ điển.");
                 } else {
@@ -79,7 +79,7 @@ public class DictionaryManagement {
             }
             if (n == 2) {
                 System.out.print("Từ bạn muốn xóa là: ");
-                w = scanner.next();
+                w = scanner.next().toLowerCase();
                 if (!dictionaryLookup(list, w)) {
                     System.out.println("Từ này không có trong từ điển.");
                 } else {
