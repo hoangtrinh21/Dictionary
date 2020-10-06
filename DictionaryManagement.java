@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class DictionaryManagement {
@@ -95,6 +97,7 @@ public class DictionaryManagement {
     }
 
     public void dictionaryExportToFile(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
+        Collections.sort(list.listWord, Comparator.comparing(Word::getWordTarget));
         PrintWriter printWriter=new PrintWriter("dictionaries.txt","UTF-8");
         for(int i=0;i<list.listWord.size();i++){
             printWriter.println(list.listWord.get(i).getWordTarget().toLowerCase()+'\t'+list.listWord.get(i).getWordExplain().toLowerCase());

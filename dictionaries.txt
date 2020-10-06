@@ -1,18 +1,28 @@
-hello	xin chào
+ally	đồng minh
+and	và
+bad	tồi
+beautiful	đẹp
+bird	con chim
 bye	tạm biệt
-morning	buổi sáng
+computer	máy tính
+end	kết thúc
 evening	buổi chiều
-night	buổi tối
-good	tot
-bad	toi
-beautiful	dep
-love	|yeu
-sleep	ngu
-new	mới
-old	cũ
 fan	quạt
-father	bố
-mother	mẹ
-son	con trai
 fast	nhanh
+father	bố
+good	tốt
+hello	xin chào
+high	cao
+love	yêu
+math	toán học
+morning	buổi sáng
+mother	mẹ
+new	mới
+night	buổi tối
+old	cũ
+phone	điện thoại
+short	ngắn
+sleep	ngủ
+son	con trai
+technology	công nghệ
 tiger	con hổ
