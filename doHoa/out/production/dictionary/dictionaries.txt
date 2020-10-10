@@ -1,7 +1,0 @@
-hello	xin chao
-bye	tam biet
-word	tu vung
-hen	ga mai
-hell	dia nguc
-sorry	xin loi
-help	giup do
