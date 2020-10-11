@@ -14,6 +14,7 @@ public class DictionaryManagement {
         String a = scanner.nextLine().toLowerCase();
         if (dictionaryLookup(list, a)) {
             System.out.println("Trong từ điển đã có từ này.");
+            return;
         }
         System.out.print("Nghĩa tiếng Việt của " + a + " là: ");
         String b = scanner.nextLine();
