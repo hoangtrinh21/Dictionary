@@ -11,6 +11,8 @@ import java.io.UnsupportedEncodingException;
 
 
 public class Controller {
+    Dictionary lWord = new Dictionary();
+    DictionaryManagement mana=new DictionaryManagement();
     @FXML
     private MenuButton suaXoa;
     @FXML
@@ -20,11 +22,10 @@ public class Controller {
     @FXML
     private TextArea Explain;
     public void handleSearch(ActionEvent event) throws IOException {
-        dictionarySearch a=new dictionarySearch();
-        a.insertFromFile();
+        mana.insertFromFile(lWord);
         String s=TuTiengAnh.getText();
         Target.setText(s);
-        Word w=a.wordlook(s);
+        Word w=mana.wordlook(lWord, s);
         if(w==null){
             Explain.setText("Khong co tu nao tim thay!");
         }
@@ -32,17 +33,23 @@ public class Controller {
             Explain.setText(w.getWordExplain());
         }
     }
-    public void deleteWord(ActionEvent event) throws FileNotFoundException, UnsupportedEncodingException {
-        dictionarySearch a=new dictionarySearch();
-        a.insertFromFile();
+    public void deleteWord(ActionEvent event) throws IOException {
+        mana.insertFromFile(lWord);
         String string=TuTiengAnh.getText();
-        Word w=a.wordlook(string);
-        a.delete(w);
-        a.suafile();
+        Word w=mana.wordlook(lWord,string);
+        lWord.listWord.remove(w);
+        mana.suafile(lWord);
     }
-    public void sua(ActionEvent event){
+    public void choPhepSua(ActionEvent event){
         Explain.setEditable(true);
-        String s=Explain.getText();
-        String a=Target.getText();
+    }
+    public void Sua(ActionEvent event) throws IOException {
+        String target = Target.getText();
+        String explain = Explain.getText();
+        mana.insertFromFile(lWord);
+        Word word=mana.wordlook(lWord,target);
+        word.setWordExplain(explain);
+        mana.suafile(lWord);
+        Explain.setEditable(false);
     }
 }

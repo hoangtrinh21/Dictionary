@@ -1,7 +1,18 @@
-hello	xin chao
-bye	tam biet
+dog	cho
+cat	meo
 word	tu vung
 hen	ga mai
 hell	dia nguc
 sorry	xin loi
 help	giup do
+bye	tam biet
+dog	cho
+cat	meo
+word	tu vung
+hen	ga mai
+hell	dia nguc
+sorry	xin loi
+help	giup do
+bye	tam biet
+hello	xin chao
+	
