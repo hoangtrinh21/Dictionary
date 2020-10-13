@@ -1,18 +1,35 @@
-dog	cho
-cat	meo
-word	tu vung
-hen	ga mai
-hell	dia nguc
-sorry	xin loi
-help	giup do
-bye	tam biet
-dog	cho
-cat	meo
-word	tu vung
-hen	ga mai
-hell	dia nguc
-sorry	xin loi
-help	giup do
-bye	tam biet
+ally	đồng minh
+and	và
+bad	tồi
+beautiful	đẹp
+bird	con chim
+blow	thổi
+bye	tạm biệt
+computer	máy tính
+end	kết thúc
+enemy	kẻ thù
+evening	buổi chiều
+fan	quạt
+fast	nhanh
+father	bố
+good	tốt
 hello	xin chao
+high	cao
+jump	nhảy
+love	yêu
+math	toán học
+morning	buổi sáng
+mother	mẹ
+new	mới
+night	buổi tối
+old	cũ
+phone	điện thoại
+short	ngắn
+sleep	ngủ
+son	con trai
+study	học
+swim	bơi
+technology	công nghệ
+tiger	con hổ
+model	mo hinh
 	

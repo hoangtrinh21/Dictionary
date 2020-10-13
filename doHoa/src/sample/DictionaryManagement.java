@@ -1,19 +1,15 @@
 package sample;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class DictionaryManagement {
     public void suafile(Dictionary list) throws FileNotFoundException {
         PrintWriter printWriter = new PrintWriter("C:\\Users\\leman\\IdeaProjects\\doHoa\\src\\sample\\dictionaries.txt");
-        for (int i = 0; i < list.listWord.size(); i++) {
-            printWriter.println(list.listWord.get(i).getWordTarget() + '\t' + list.listWord.get(i).getWordExplain());
-        }
-        printWriter.close();
+            for (int i = 0; i < list.listWord.size(); i++) {
+                printWriter.println(list.listWord.get(i).getWordTarget() + '\t' + list.listWord.get(i).getWordExplain());
+            }
+            printWriter.close();
     }
     void insertFromCommandline(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         DictionaryManagement dictionaryManagement=new DictionaryManagement();
@@ -31,18 +27,18 @@ public class DictionaryManagement {
 
     public void insertFromFile(Dictionary list) throws IOException {
         Scanner scanner = new Scanner(Paths.get("C:\\Users\\leman\\IdeaProjects\\doHoa\\src\\sample\\dictionaries.txt"));
-        while (scanner.hasNext()) {
-            while (scanner.hasNextLine()) {
-                Word x = new Word();
-                String a = scanner.next();
-                x.setWordTarget(a);
-                String  b = scanner.nextLine();
-                b = b.trim().replaceAll(" +", " ");
-                x.setWordExplain(b);
-                list.listWord.add(x);
-            }
-        }
-        scanner.close();
+       while (scanner.hasNext()) {
+          while (scanner.hasNextLine()) {
+              Word x = new Word();
+              String a = scanner.next();
+              x.setWordTarget(a);
+              String  b = scanner.nextLine();
+              b = b.trim().replaceAll(" +", " ");
+              x.setWordExplain(b);
+              list.listWord.add(x);
+          }
+       }
+       scanner.close();
     }
 
     public Word wordlook(Dictionary list, String tar){
@@ -56,7 +52,6 @@ public class DictionaryManagement {
 
     public void dictionaryAdvanced(Dictionary list) throws IOException {
         insertFromFile(list);
-
         DictionaryCommandline a=new DictionaryCommandline();
         a.showAllWords(list);
         Scanner sc = new Scanner(System.in);
