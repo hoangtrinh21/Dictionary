@@ -1,0 +1,121 @@
+package sample;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import org.controlsfx.control.textfield.TextFields;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
+    Dictionary lWord = new Dictionary();
+    DictionaryManagement mana=new DictionaryManagement();
+    DictionaryCommandline dcomandline=new DictionaryCommandline();
+    Dictionary history=new Dictionary();
+    private int viTriLichSu=0;
+    @FXML
+    private TextField TuTiengAnh;
+    @FXML
+    private TextArea Target;
+    @FXML
+    private TextArea Explain;
+    public Controller() throws IOException {
+         mana.insertFromFile(lWord);
+    }
+    public void handleSearch(ActionEvent event) throws IOException {
+        String s=TuTiengAnh.getText();
+        Target.setText(s);
+        Word w=mana.wordlook(lWord, s);
+        if(w==null){
+            Explain.setText("Khong co tu nao tim thay!");
+        }
+        else{
+            Explain.setText(w.getWordExplain());
+            history.listWord.add(w);
+            viTriLichSu++;
+        }
+    }
+    public void deleteWord(ActionEvent event) throws IOException {
+        String string=TuTiengAnh.getText();
+        Word w=mana.wordlook(lWord,string);
+        lWord.listWord.remove(w);
+        mana.suafile(lWord);
+        history.listWord.add(w);
+        viTriLichSu++;
+        lamTrangDeTimTuMoi();
+    }
+    public void choPhepSua(ActionEvent event){
+        Explain.setEditable(true);
+        Target.setEditable(true);
+    }
+
+    public void Sua(ActionEvent event) throws IOException {
+        String target = Target.getText();
+        String explain = Explain.getText();
+        Word word=mana.wordlook(lWord,target);
+        if(word==null) return;
+        word.setWordExplain(explain);
+        mana.suafile(lWord);
+        lamTrangDeTimTuMoi();
+        Target.setEditable(false);
+        Explain.setEditable(false);
+        history.listWord.add(word);
+        viTriLichSu++;
+    }
+    public void them(ActionEvent event) throws IOException {
+        String target = Target.getText();
+        String explain = Explain.getText();
+        Word word=new Word(target,explain);
+        lWord.listWord.add(word);
+        mana.suafile(lWord);
+        Target.setEditable(false);
+        Explain.setEditable(false);
+        history.listWord.add(word);
+        viTriLichSu++;
+        lamTrangDeTimTuMoi();
+    }
+    public void back(ActionEvent event) {
+        lamTrangDeTimTuMoi();
+        if(viTriLichSu !=0){
+            Target.setText(history.listWord.get(viTriLichSu-1).getWordTarget());
+            Explain.setText(history.listWord.get(viTriLichSu-1).getWordExplain());
+            viTriLichSu-=1;
+        }
+        else{
+            Explain.setText("không có từ nào trong quá khứ");
+        }
+    }
+    public void tuDangSau(ActionEvent event){
+        lamTrangDeTimTuMoi();
+        if(viTriLichSu!=history.listWord.size()){
+            Target.setText(history.listWord.get(viTriLichSu).getWordTarget());
+            Explain.setText(history.listWord.get(viTriLichSu).getWordExplain());
+            viTriLichSu+=1;
+        }
+        else{
+            Explain.setText("không có từ nào trong đằng sau");
+        }
+    }
+    void lamTrangDeTimTuMoi(){
+        TuTiengAnh.setText("");
+        Explain.setText("");
+        Target.setText("");
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        List<String> list=dcomandline.TutiengAnh(lWord);
+        TextFields.bindAutoCompletion(TuTiengAnh,list);
+    }
+//
+//    @Override
+//    public void initialize(URL location, ResourceBundle resources) {
+//        List<String> list=dcomandline.TutiengAnh(lWord);
+//        TextFields.bindAutoCompletion(TuTiengAnh,list);
+//    }
+}
