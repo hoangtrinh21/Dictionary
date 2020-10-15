@@ -29,7 +29,7 @@ public class DictionaryCommandline {
         in.insertFromCommandline(list);
         showAllWords(list);
     }
-    public List<String> dictionarySearcher(Dictionary list,String s){
+    public List<String> wordSearcher(Dictionary list,String s){
         List<String> st =new ArrayList<>();
         int n=s.length();
         for(Word i: list.listWord){
@@ -43,11 +43,22 @@ public class DictionaryCommandline {
         }
         return st;
     }
-    public List<String> TutiengAnh(Dictionary lWord){
-        List<String> a=new ArrayList<>();
-        for(Word b:lWord.listWord){
-            a.add(b.getWordTarget());
+
+    public List<Word> dictionarySearcher(Dictionary a, String search) {
+        List<Word> wordList = new ArrayList<>();
+        for (Word i : a.listWord) {
+            if (i.getWordTarget().startsWith(search)) {
+                wordList.add(i);
+            }
         }
-        return a;
+        return wordList;
     }
+
+//    public List<String> TutiengAnh(Dictionary lWord){
+//        List<String> a=new ArrayList<>();
+//        for(Word b:lWord.listWord){
+//            a.add(b.getWordTarget());
+//        }
+//        return a;
+//    }
 }

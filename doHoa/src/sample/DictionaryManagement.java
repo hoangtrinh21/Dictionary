@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class DictionaryManagement {
     public void suafile(Dictionary list) throws FileNotFoundException {
-        PrintWriter printWriter = new PrintWriter("C:\\Users\\leman\\IdeaProjects\\doHoa\\src\\sample\\dictionaries.txt");
+        PrintWriter printWriter = new PrintWriter("src/sample/dictionaries.txt");
             for (int i = 0; i < list.listWord.size(); i++) {
                 printWriter.println(list.listWord.get(i).getWordTarget() + '\t' + list.listWord.get(i).getWordExplain());
             }
@@ -26,7 +26,7 @@ public class DictionaryManagement {
     }
 
     public void insertFromFile(Dictionary list) throws IOException {
-        Scanner scanner = new Scanner(Paths.get("C:\\Users\\leman\\IdeaProjects\\doHoa\\src\\sample\\dictionaries.txt"));
+        Scanner scanner = new Scanner(Paths.get("src/sample/dictionaries.txt"));
        while (scanner.hasNext()) {
           while (scanner.hasNextLine()) {
               Word x = new Word();

@@ -1,22 +1,29 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     Dictionary lWord = new Dictionary();
     DictionaryManagement mana=new DictionaryManagement();
-    DictionaryCommandline dcomandline=new DictionaryCommandline();
+    DictionaryCommandline dcomandline = new DictionaryCommandline();
     Dictionary history=new Dictionary();
+    List<String> wordlist = new ArrayList<>();
+    List<Word> wordSearchedList = new ArrayList<>();
     private int viTriLichSu=0;
     @FXML
     private TextField TuTiengAnh;
@@ -24,8 +31,19 @@ public class Controller implements Initializable {
     private TextArea Target;
     @FXML
     private TextArea Explain;
+
+    @FXML
+    private ListView<String> recommendlist;
+    private ObservableList<String> observableList_target;
+    private ObservableList<Word> observableList_word;
+
+
     public Controller() throws IOException {
          mana.insertFromFile(lWord);
+         for (Word word : lWord.listWord) {
+            wordlist.add(word.getWordTarget());
+            wordSearchedList.add(word);
+         }
     }
     public void handleSearch(ActionEvent event) throws IOException {
         String s=TuTiengAnh.getText();
@@ -107,10 +125,33 @@ public class Controller implements Initializable {
         Target.setText("");
     }
 
+    @FXML
+    private void updateRecommendList () {
+        String s = TuTiengAnh.getText();
+        List<String> recommendWord = dcomandline.wordSearcher(lWord, s);
+        List<Word> wordsearched = dcomandline.dictionarySearcher(lWord, s);
+        observableList_target.clear();
+        observableList_target.addAll(recommendWord);
+        observableList_word.clear();
+        observableList_word.addAll(wordsearched);
+        if(observableList_word.size() == 0 || s == null){
+            Explain.setText("Khong co tu nao tim thay!");
+            Target.setText("");
+        }
+        else{
+            Target.setText(observableList_word.get(0).getWordTarget());
+            Explain.setText(observableList_word.get(0).getWordExplain());
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        List<String> list=dcomandline.TutiengAnh(lWord);
-        TextFields.bindAutoCompletion(TuTiengAnh,list);
+//        List<String> list=dcomandline.TutiengAnh(lWord);
+//        TextFields.bindAutoCompletion(TuTiengAnh,list);
+        observableList_target = FXCollections.observableList(wordlist);
+        observableList_word = FXCollections.observableArrayList(wordSearchedList);
+        recommendlist.setItems(observableList_target);
+        TuTiengAnh.setOnKeyReleased(event -> updateRecommendList());
     }
 //
 //    @Override
