@@ -1,4 +1,3 @@
-ally	đồng minh
 and	và
 bad	tồi
 beautiful	đẹp
@@ -11,7 +10,6 @@ enemy	kẻ thù
 evening	buổi chiều
 fan	quạt
 fast	nhanh
-father	bố
 good	tốt
 hello	xin chào
 high	cao
@@ -31,3 +29,5 @@ study	học
 swim	bơi
 technology	công nghệ
 tiger	con hổ
+father	bố
+ally	đồng minh
