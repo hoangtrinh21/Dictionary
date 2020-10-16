@@ -6,14 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class    Main extends Application {
-
+public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         try {
             Parent root=FXMLLoader.load(getClass().getResource("sample.fxml"));
             Scene scene=new Scene(root);
             primaryStage.setScene(scene);
+            primaryStage.setTitle("Dictionary English Việt");
             primaryStage.show();
         }catch (Exception e){
             System.out.println(e.getMessage());

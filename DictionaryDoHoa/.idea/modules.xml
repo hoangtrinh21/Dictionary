@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DictionaryDoHoa.iml" filepath="$PROJECT_DIR$/DictionaryDoHoa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/doHoa.iml" filepath="$PROJECT_DIR$/doHoa.iml" />
     </modules>
   </component>
 </project>

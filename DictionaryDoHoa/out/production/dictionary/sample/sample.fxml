@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="501.0" prefWidth="718.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <TextField fx:id="TuTiengAnh" layoutX="7.0" layoutY="101.0" prefHeight="55.0" prefWidth="212.0" promptText="Tìm Kiếm Từ" />
-      <Button layoutX="14.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="25.0" prefWidth="79.0" text="Tim kiem" />
-      <TextArea fx:id="Target" editable="false" layoutX="280.0" layoutY="101.0" prefHeight="55.0" prefWidth="448.0" />
-      <TextArea fx:id="Explain" editable="false" layoutX="280.0" layoutY="155.0" prefHeight="443.0" prefWidth="448.0" />
-      <Button layoutX="677.0" layoutY="66.0" mnemonicParsing="false" text="Xóa" />
-      <Button layoutX="280.0" layoutY="66.0" mnemonicParsing="false" onAction="#choPhepSua" text="Nhấn vào để sửa" />
-      <Button layoutX="543.0" layoutY="66.0" mnemonicParsing="false" text="Thêm " />
-      <Button layoutX="617.0" layoutY="66.0" mnemonicParsing="false" onAction="#Sua" text="Sửa" />
+      <TextField fx:id="TuTiengAnh" layoutX="16.0" layoutY="143.0" prefHeight="33.0" prefWidth="160.0" />
+      <TextArea fx:id="Target" layoutX="239.0" layoutY="129.0" prefHeight="71.0" prefWidth="487.0" />
+      <TextArea fx:id="Explain" layoutX="238.0" layoutY="200.0" prefHeight="300.0" prefWidth="487.0" />
+      <Pane layoutY="-1.0" opacity="0.52" prefHeight="124.0" prefWidth="725.0" style="-fx-background-color: #1D2026;">
+         <children>
+            <Button layoutX="671.0" layoutY="90.0" minWidth="53.0" mnemonicParsing="false" onAction="#tuDangSau" prefHeight="26.0" prefWidth="53.0" text="After" />
+            <Button layoutX="624.0" layoutY="90.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="46.0" text="Back" />
+            <Button layoutX="473.0" layoutY="90.0" mnemonicParsing="false" onAction="#them" prefHeight="26.0" prefWidth="54.0" text="Thêm" />
+            <Button layoutX="526.0" layoutY="90.0" mnemonicParsing="false" onAction="#Sua" prefHeight="26.0" prefWidth="53.0" text="Sửa" />
+            <Button layoutX="578.0" layoutY="90.0" mnemonicParsing="false" onAction="#deleteWord" prefHeight="26.0" prefWidth="46.0" text="Xóa" />
+            <Button layoutX="237.0" layoutY="90.0" mnemonicParsing="false" onAction="#choPhepSua" prefHeight="25.0" prefWidth="141.0" text="Edit delete more" />
+            <Button layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleSearch" text=" Search for word" />
+            <Label layoutX="23.0" layoutY="14.0" text="Dictionary" textFill="#fcfafa">
+               <font>
+                  <Font size="49.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <ListView layoutX="-1.0" layoutY="185.0" prefHeight="316.0" prefWidth="233.0" />
    </children>
 </AnchorPane>
