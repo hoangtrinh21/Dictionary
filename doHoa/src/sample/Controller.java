@@ -1,5 +1,7 @@
 package sample;
 
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -173,5 +175,13 @@ public class Controller implements Initializable {
         observableList_word = FXCollections.observableArrayList(wordSearchedList);
         recommendlist.setItems(observableList_target);
         TuTiengAnh.setOnKeyReleased(event -> updateRecommendList());
+    }
+    
+        public void speek() {//xu li phat am
+        System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
+        VoiceManager vm = VoiceManager.getInstance();
+        Voice voice = vm.getVoice("kevin16");
+        voice.allocate();
+        voice.speak(Target.getText());
     }
 }
