@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="202.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerThem">
+   <children>
+      <Label layoutX="45.0" layoutY="14.0" prefHeight="35.0" prefWidth="283.0" text="Hãy thêm từ bạn muốn">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Target" layoutX="45.0" layoutY="66.0" prefHeight="25.0" prefWidth="193.0" />
+      <TextField fx:id="Explain" layoutX="45.0" layoutY="118.0" prefHeight="25.0" prefWidth="193.0" />
+      <Button layoutX="264.0" layoutY="66.0" mnemonicParsing="false" onAction="#them" text="Them" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,39 @@
+ally	đồng minh
+and	va
+ant	con kiến
+bad	tồi
+ball	quả bóng
+beautiful	đẹp
+bird	con chim
+blow	thổi
+bye	tạm biệt
+call	gọi
+clock	đồng hồ
+computer	máy tính
+end	kết thúc
+enemy	kẻ thù
+evening	buổi chiều
+fan	quạt
+fast	nhanh
+father	bố
+girl	con gái
+good	tốt
+hello	xin chào
+high	cao
+jump	nhảy
+lion	con sư tử
+love	yêu
+math	toán học
+morning	buổi sáng
+mother	mẹ
+new	mới
+night	buổi tối
+old	cũ
+phone	điện thoại
+short	ngắn
+sleep	ngủ
+son	con trai
+study	học
+swim	bơi
+technology	công nghệ
+tiger	con hổ
