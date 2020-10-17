@@ -13,7 +13,7 @@ fan	quạt
 fast	nhanh
 father	bố
 good	tốt
-hello	chao
+hello	xin chào
 high	cao
 jump	nhảy
 love	yêu

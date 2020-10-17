@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="02ed4581-5bcf-44c9-858b-c5d7bda03481" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/DictionaryDoHoa.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/dictionary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/dictionary.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/Dictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/DictionaryCommandline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/DictionaryManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/dictionarySearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/DictionaryDoHoa/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/DictionaryCommandline.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/DictionaryCommandline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/DictionaryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/DictionaryManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/dictionaries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/dictionaries.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/dictionarySearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/out/production/dictionary/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/src/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/DictionaryCommandline.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/DictionaryCommandline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/dictionarySearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../DictionaryDoHoa/src/sample/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionary.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doHoa.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/Apijava.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/Dictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/DictionaryCommandline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/DictionaryManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/cas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/goitu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/goitu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/goitu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/dictionary/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/Apijava.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/Dictionary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/DictionaryCommandline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/DictionaryManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/cas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/goitu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/goitu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/goitu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/doHoa/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Apijava.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Dictionary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/DictionaryCommandline.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/DictionaryManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Word.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/cas.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/dictionaries.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/goitu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\IntelliJ IDEA Community Edition 2020.2.1\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ixhV0G6jzdYzQcij8jVokHVpO0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DictionaryDoHoa" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="doHoa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02ed4581-5bcf-44c9-858b-c5d7bda03481" name="Default Changelist" comment="" />
+      <created>1602855170055</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602855170055</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="348" y="81" key="FileChooserDialogImpl" timestamp="1602856682933">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="348" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1602856682933" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1602856684201">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1602856684201" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1602856684201">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1602856684201" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1602856684201">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1602856684201" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1602856684201">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1602856684201" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1602856635744">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1602856635744" />
+  </component>
+</project>

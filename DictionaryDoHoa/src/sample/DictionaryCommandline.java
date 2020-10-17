@@ -1,30 +1,28 @@
 package sample;
 
-import jdk.nashorn.internal.runtime.OptimisticReturnFilters;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class DictionaryCommandline {
     DictionaryManagement in = new DictionaryManagement();
     public void showAllWords(Dictionary a) {
+        System.out.println("------------------------------------------------");
         System.out.println("No | English           | Vietnamese");
         for (int i = 0;i < a.listWord.size(); i++){
-            System.out.printf("%-3s| %-20s|%s%n", i + 1, a.listWord.get(i).getWordTarget(), a.listWord.get(i).getWordExplain());
+            System.out.printf("%-3s| %-20s| %s%n", i + 1, a.listWord.get(i).getWordTarget(), a.listWord.get(i).getWordExplain());
         }
     }
+
     public void dictionaryAdvanced(Dictionary list) throws IOException {
-        DictionaryManagement a=new DictionaryManagement();
-        a.insertFromFile(list);
+        in.insertFromFile(list);
         showAllWords(list);
         Scanner sc = new Scanner(System.in);
-        String tar = sc.next();
-        a.dictionaryLookup(list, tar);
+        String tar = sc.next().toLowerCase();
+        in.dictionaryLookup(list, tar);
     }
+
     public void dictionaryBasic(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         in.insertFromCommandline(list);
         showAllWords(list);
@@ -53,12 +51,4 @@ public class DictionaryCommandline {
         }
         return wordList;
     }
-
-//    public List<String> TutiengAnh(Dictionary lWord){
-//        List<String> a=new ArrayList<>();
-//        for(Word b:lWord.listWord){
-//            a.add(b.getWordTarget());
-//        }
-//        return a;
-//    }
 }

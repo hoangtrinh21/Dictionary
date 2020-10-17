@@ -7,13 +7,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 //import java.awt.event.MouseEvent;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
@@ -69,7 +72,7 @@ public class Controller implements Initializable {
         String string = TuTiengAnh.getText();
         Word w = mana.wordlook(lWord, string);
         lWord.listWord.remove(w);
-        mana.suafile(lWord);
+        mana.dictionaryExportToFile(lWord);
         history.listWord.add(w);
         viTriLichSu++;
         lamTrangDeTimTuMoi();
@@ -86,7 +89,7 @@ public class Controller implements Initializable {
         Word word = mana.wordlook(lWord, target);
         if (word == null) return;
         word.setWordExplain(explain);
-        mana.suafile(lWord);
+        mana.dictionaryExportToFile(lWord);
         lamTrangDeTimTuMoi();
         Target.setEditable(false);
         Explain.setEditable(false);
@@ -97,14 +100,23 @@ public class Controller implements Initializable {
     public void them(ActionEvent event) throws IOException {
         String target = Target.getText();
         String explain = Explain.getText();
-        Word word = new Word(target, explain);
-        lWord.listWord.add(word);
-        mana.suafile(lWord);
-        Target.setEditable(false);
-        Explain.setEditable(false);
-        history.listWord.add(word);
-        viTriLichSu++;
-        lamTrangDeTimTuMoi();
+        Word w = mana.wordlook(lWord, target);
+        if(mana.dictionaryLookup(lWord, Target.getText())) {
+            Word word = new Word(target, explain);
+            lWord.listWord.add(word);
+            mana.dictionaryExportToFile(lWord);
+            Target.setEditable(false);
+            Explain.setEditable(false);
+            history.listWord.add(word);
+            viTriLichSu++;
+            lamTrangDeTimTuMoi();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("thông báo");
+            alert.setHeaderText("result");
+            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
+        }
     }
 
     public void back(ActionEvent event) {
@@ -136,7 +148,8 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    public void selectWord(MouseEvent event) {
+    public void selectWord(MouseEvent event) throws FileNotFoundException, UnsupportedEncodingException {
+        mana.dictionaryExportToFile(lWord);
         String s = recommendlist.getSelectionModel().getSelectedItem();
         Target.setText(s);
         TuTiengAnh.setText(s);
@@ -185,5 +198,10 @@ public class Controller implements Initializable {
         Voice voice = vm.getVoice("kevin16");
         voice.allocate();
         voice.speak(Target.getText());
+    }
+
+    public void huy() {
+        Target.setEditable(false);
+        Explain.setEditable(false);
     }
 }
