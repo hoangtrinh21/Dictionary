@@ -2,15 +2,13 @@ package sample;
 
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
+import com.sun.speech.freetts.en.us.FeatureProcessors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 //import java.awt.event.MouseEvent;
@@ -97,11 +95,19 @@ public class Controller implements Initializable {
         viTriLichSu++;
     }
 
-    public void them(ActionEvent event) throws IOException {
+    public void addWord(ActionEvent event) throws IOException {
         String target = Target.getText();
         String explain = Explain.getText();
-        Word w = mana.wordlook(lWord, target);
-        if(mana.dictionaryLookup(lWord, Target.getText())) {
+        if(mana.dictionaryLookup(lWord, target)) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("thông báo");
+            alert.setHeaderText("result");
+            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
+            alert.showAndWait();
+            Target.setEditable(false);
+            Explain.setEditable(false);
+        }
+        else {
             Word word = new Word(target, explain);
             lWord.listWord.add(word);
             mana.dictionaryExportToFile(lWord);
@@ -111,13 +117,13 @@ public class Controller implements Initializable {
             viTriLichSu++;
             lamTrangDeTimTuMoi();
         }
-        else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("thông báo");
-            alert.setHeaderText("result");
-            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
-        }
     }
+
+//    public void addWord(ActionEvent event) {
+//        TextInputDialog dialog = new TextInputDialog();
+//        dialog.setTitle("Thêm từ");
+//
+//    }
 
     public void back(ActionEvent event) {
         lamTrangDeTimTuMoi();
@@ -145,6 +151,8 @@ public class Controller implements Initializable {
         TuTiengAnh.setText("");
         Explain.setText("");
         Target.setText("");
+        observableList_target.clear();
+
     }
 
     @FXML
@@ -164,7 +172,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private void updateRecommendList() {
+    private void typeWord() {
         String s = TuTiengAnh.getText();
         List<String> recommendWord = dcomandline.wordSearcher(lWord, s);
         List<Word> wordsearched = dcomandline.dictionarySearcher(lWord, s);
@@ -181,15 +189,18 @@ public class Controller implements Initializable {
         }
     }
 
+    private void updateRecommendList() {
+
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        List<String> list=dcomandline.TutiengAnh(lWord);
 //        TextFields.bindAutoCompletion(TuTiengAnh,list);
         observableList_target = FXCollections.observableList(wordlist);
-        observableList_word = FXCollections.observableArrayList(wordSearchedList);
+        observableList_word = FXCollections.observableArrayList(lWord.listWord);
         recommendlist.setItems(observableList_target);
-        TuTiengAnh.setOnKeyReleased(event -> updateRecommendList());
+        TuTiengAnh.setOnKeyReleased(event -> typeWord());
     }
 
     public void speak() {

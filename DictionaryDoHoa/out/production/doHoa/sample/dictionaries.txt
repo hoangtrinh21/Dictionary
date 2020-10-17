@@ -1,6 +1,8 @@
 ally	đồng minh
 and	va
+ant	con kiến
 bad	tồi
+ball	quả bóng
 beautiful	đẹp
 bird	con chim
 blow	thổi
@@ -13,9 +15,10 @@ fan	quạt
 fast	nhanh
 father	bố
 good	tốt
-hello	chao
+hello	xin chào
 high	cao
 jump	nhảy
+lion	con sư tử
 love	yêu
 math	toán học
 morning	buổi sáng

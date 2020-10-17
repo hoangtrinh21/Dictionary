@@ -1,10 +1,13 @@
 ally	đồng minh
 and	va
+ant	con kiến
 bad	tồi
+ball	quả bóng
 beautiful	đẹp
 bird	con chim
 blow	thổi
 bye	tạm biệt
+call	gọi
 computer	máy tính
 end	kết thúc
 enemy	kẻ thù
@@ -13,9 +16,10 @@ fan	quạt
 fast	nhanh
 father	bố
 good	tốt
-hello	chao
+hello	xin chào
 high	cao
 jump	nhảy
+lion	con sư tử
 love	yêu
 math	toán học
 morning	buổi sáng
