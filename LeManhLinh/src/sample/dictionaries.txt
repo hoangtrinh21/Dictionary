@@ -6,6 +6,7 @@ bird	con chim
 blow	thổi
 book	sách
 bye	tạm biệt
+calculator	máy tính bỏ túi
 computer	máy tính
 cucumber	quả dưa chuột
 day	ngày
@@ -41,3 +42,4 @@ study	học
 swim	bơi
 technology	công nghệ
 tiger	con hổ
+window	cửa sổ
