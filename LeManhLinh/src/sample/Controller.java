@@ -10,11 +10,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
@@ -23,6 +21,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable  {
@@ -33,6 +32,12 @@ public class Controller implements Initializable  {
     List<String> wordlist = new ArrayList<>();
     List<Word> wordSearchedList = new ArrayList<>();
     private int viTriLichSu = 0;
+    @FXML
+    private TextField TargetAdd;
+
+    @FXML
+    private TextArea ExplainAdd;
+
     @FXML
     private TextField TuTiengAnh;
 
@@ -74,33 +79,29 @@ public class Controller implements Initializable  {
         viTriLichSu++;
         lamTrangDeTimTuMoi();
     }
-    public void choPhepSua(ActionEvent event) {
-        Explain.setEditable(true);
-        Target.setEditable(true);
-    }
-    public void addWord(ActionEvent event) throws IOException {
-        String target = Target.getText();
-        String explain = Explain.getText();
-        if(mana.dictionaryLookup(lWord, target)) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("thông báo");
-            alert.setHeaderText("result");
-            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
-            alert.showAndWait();
-            Target.setEditable(false);
-            Explain.setEditable(false);
-        }
-        else {
-            Word word = new Word(target, explain);
-            lWord.listWord.add(word);
-            mana.dictionaryExportToFile(lWord);
-            Target.setEditable(false);
-            Explain.setEditable(false);
-            history.listWord.add(word);
-            viTriLichSu++;
-            lamTrangDeTimTuMoi();
-        }
-    }
+//    public void choPhepSua(ActionEvent event) {
+//        Explain.setEditable(true);
+//        Target.setEditable(true);
+//    }
+//    public void addWord(ActionEvent event) throws IOException {
+//        Word tuCanThem = new Word(TargetAdd.getText(), ExplainAdd.getText());
+//        if(!mana.dictionaryLookup(lWord, TargetAdd.getText())) {
+//            lWord.listWord.add(tuCanThem);
+//            mana.dictionaryExportToFile(lWord);
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setTitle("Thành công");
+//            alert.setHeaderText("Đã thêm từ này vào từ điển");
+////            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
+//            alert.showAndWait();
+//        }
+//        else {
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setTitle("Lỗi");
+//            alert.setHeaderText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
+////            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
+//            alert.showAndWait();
+//        }
+//    }
     public void back(ActionEvent event) {
         lamTrangDeTimTuMoi();
         if (viTriLichSu != 0) {
@@ -159,9 +160,6 @@ public class Controller implements Initializable  {
             Explain.setText(observableList_word.get(0).getWordExplain());
         }
     }
-    private void updateRecommendList() {
-
-    }
     public void speak() {
         System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
         VoiceManager vm = VoiceManager.getInstance();
@@ -182,17 +180,41 @@ public class Controller implements Initializable  {
     }
 
     public void HienThiCuaSoSua() throws Exception {
-        Mainsua mainsua=new Mainsua();
-        Stage primaryStage=new Stage();
-        mainsua.start(primaryStage);
-        lWord.listWord.clear();
-        mana.insertFromFile(lWord);
+//        Parent root = FXMLLoader.load(getClass().getResource("sua.fxml"));
+//        Stage primaryStage = new Stage();
+//        primaryStage.setTitle("Sửa từ");
+//        primaryStage.setScene(new Scene(root));
+//        primaryStage.initModality(Modality.APPLICATION_MODAL);
+//        primaryStage.showAndWait();
+//        lWord.listWord.clear();
+//        mana.insertFromFile(lWord);
+        TextInputDialog dialog = new TextInputDialog(Explain.getText());
+        dialog.setTitle("Sửa nghĩa");
+        dialog.setHeaderText("Sửa nghĩa của từ ở đây:");
+        dialog.setContentText("Meaning:");
+        Optional<String> result = dialog.showAndWait();
+        Word tuCanSua = mana.wordlook(lWord, Target.getText());
+        result.ifPresent(name -> {
+            tuCanSua.setWordExplain(name);
+            Explain.setText(tuCanSua.getWordExplain());
+            try {
+                mana.dictionaryExportToFile(lWord);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        });
     }
     public void HienThiCuaSoThem() throws Exception {
-        MainThem mainThem=new MainThem();
-        Stage primaryStage=new Stage();
-        mainThem.start(primaryStage);
+        Parent root = FXMLLoader.load(getClass().getResource("them.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Thêm từ");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        primaryStage.showAndWait();
         lWord.listWord.clear();
         mana.insertFromFile(lWord);
+        typeWord();
     }
 }

@@ -27,7 +27,7 @@ public class DictionaryManagement {
     }
 
     public void insertFromFile(Dictionary list) throws IOException {
-        Scanner scanner = new Scanner(Paths.get("C:\\Users\\leman\\IdeaProjects\\DictionaryDoHoa\\src\\sample\\dictionaries.txt"));
+        Scanner scanner = new Scanner(Paths.get("src/sample/dictionaries.txt"));
         while (scanner.hasNext()) {
             while (scanner.hasNextLine()) {
                 Word x = new Word();
@@ -101,7 +101,7 @@ public class DictionaryManagement {
 
     public void dictionaryExportToFile(Dictionary list) throws FileNotFoundException, UnsupportedEncodingException {
         Collections.sort(list.listWord, Comparator.comparing(Word::getWordTarget));
-        PrintWriter printWriter=new PrintWriter("C:\\Users\\leman\\IdeaProjects\\DictionaryDoHoa\\src\\sample\\dictionaries.txt","UTF-8");
+        PrintWriter printWriter=new PrintWriter("src/sample/dictionaries.txt","UTF-8");
         for(int i=0;i<list.listWord.size();i++){
             printWriter.println(list.listWord.get(i).getWordTarget().toLowerCase()+'\t'+list.listWord.get(i).getWordExplain().toLowerCase());
         }

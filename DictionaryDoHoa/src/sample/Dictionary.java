@@ -11,9 +11,9 @@ import java.util.Scanner;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class Dictionary {
-    public List<Word> listWord = new ArrayList<Word>();
+    public static List<Word> listWord = new ArrayList<Word>();
 
-    public void loadFromFile() throws IOException {
+    public static void loadFromFile() throws IOException {
         Scanner scanner = new Scanner(Paths.get("src/sample/dictionaries.txt"));
         while (scanner.hasNext()) {
             while (scanner.hasNextLine()) {
