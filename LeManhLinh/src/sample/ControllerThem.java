@@ -34,6 +34,7 @@ public class ControllerThem {
             alert.setHeaderText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
 //            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
             alert.showAndWait();
+
         }
     }
 }

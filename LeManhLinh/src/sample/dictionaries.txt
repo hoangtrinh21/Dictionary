@@ -36,6 +36,7 @@ phone	điện thoại
 ruler	thước
 school	trường học
 short	ngắn
+skirt	váy
 sleep	ngủ
 son	con trai
 study	học
