@@ -32,25 +32,21 @@ public class Controller implements Initializable  {
     List<String> wordlist = new ArrayList<>();
     List<Word> wordSearchedList = new ArrayList<>();
     private int viTriLichSu = 0;
-    @FXML
-    private TextField TargetAdd;
-
-    @FXML
-    private TextArea ExplainAdd;
-
-    @FXML
-    private TextField TuTiengAnh;
-
-    @FXML
-    private TextArea Target;
-
-    @FXML
-    private TextArea Explain;
-
-    @FXML
-    private ListView<String> recommendlist;
     private ObservableList<String> observableList_target;
     private ObservableList<Word> observableList_word;
+    @FXML
+    private TextField TargetAdd;
+    @FXML
+    private TextArea ExplainAdd;
+    @FXML
+    private TextField TuTiengAnh;
+    @FXML
+    private TextArea Target;
+    @FXML
+    private TextArea Explain;
+    @FXML
+    private ListView<String> recommendlist;
+    
     public Controller() throws IOException {
         mana.insertFromFile(lWord);
         for (Word word : lWord.listWord) {
@@ -58,6 +54,7 @@ public class Controller implements Initializable  {
             wordSearchedList.add(word);
         }
     }
+    
     public void handleSearch(ActionEvent event) throws IOException {
         String s = TuTiengAnh.getText();
         Target.setText(s);
@@ -70,6 +67,7 @@ public class Controller implements Initializable  {
             viTriLichSu++;
         }
     }
+    
     public void deleteWord(ActionEvent event) throws IOException {
         String string = TuTiengAnh.getText();
         Word w = mana.wordlook(lWord, string);
@@ -79,29 +77,7 @@ public class Controller implements Initializable  {
         viTriLichSu++;
         lamTrangDeTimTuMoi();
     }
-//    public void choPhepSua(ActionEvent event) {
-//        Explain.setEditable(true);
-//        Target.setEditable(true);
-//    }
-//    public void addWord(ActionEvent event) throws IOException {
-//        Word tuCanThem = new Word(TargetAdd.getText(), ExplainAdd.getText());
-//        if(!mana.dictionaryLookup(lWord, TargetAdd.getText())) {
-//            lWord.listWord.add(tuCanThem);
-//            mana.dictionaryExportToFile(lWord);
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Thành công");
-//            alert.setHeaderText("Đã thêm từ này vào từ điển");
-////            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
-//            alert.showAndWait();
-//        }
-//        else {
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Lỗi");
-//            alert.setHeaderText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
-////            alert.setContentText("Từ này đã có trong từ điển \n Nếu bạn muốn thêm nghĩa của từ này, bấm nút sửa");
-//            alert.showAndWait();
-//        }
-//    }
+
     public void back(ActionEvent event) {
         lamTrangDeTimTuMoi();
         if (viTriLichSu != 0) {
@@ -112,6 +88,7 @@ public class Controller implements Initializable  {
             Explain.setText("không có từ nào trong quá khứ");
         }
     }
+    
     public void tuDangSau(ActionEvent event) {
         lamTrangDeTimTuMoi();
         if (viTriLichSu != history.listWord.size()) {
@@ -122,12 +99,14 @@ public class Controller implements Initializable  {
             Explain.setText("không có từ nào trong đằng sau");
         }
     }
+    
     void lamTrangDeTimTuMoi() {
         TuTiengAnh.setText("");
         Explain.setText("");
         Target.setText("");
         observableList_target.clear();
     }
+    
     @FXML
     public void selectWord(MouseEvent event) throws FileNotFoundException, UnsupportedEncodingException {
         mana.dictionaryExportToFile(lWord);
@@ -143,6 +122,7 @@ public class Controller implements Initializable  {
             viTriLichSu++;
         }
     }
+    
     @FXML
     private void typeWord() {
         String s = TuTiengAnh.getText();
@@ -160,6 +140,7 @@ public class Controller implements Initializable  {
             Explain.setText(observableList_word.get(0).getWordExplain());
         }
     }
+    
     public void speak() {
         System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
         VoiceManager vm = VoiceManager.getInstance();
@@ -167,10 +148,12 @@ public class Controller implements Initializable  {
         voice.allocate();
         voice.speak(Target.getText());
     }
+    
     public void huy() {
         Target.setEditable(false);
         Explain.setEditable(false);
     }
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         observableList_target = FXCollections.observableList(wordlist);
@@ -180,14 +163,6 @@ public class Controller implements Initializable  {
     }
 
     public void HienThiCuaSoSua() throws Exception {
-//        Parent root = FXMLLoader.load(getClass().getResource("sua.fxml"));
-//        Stage primaryStage = new Stage();
-//        primaryStage.setTitle("Sửa từ");
-//        primaryStage.setScene(new Scene(root));
-//        primaryStage.initModality(Modality.APPLICATION_MODAL);
-//        primaryStage.showAndWait();
-//        lWord.listWord.clear();
-//        mana.insertFromFile(lWord);
         TextInputDialog dialog = new TextInputDialog(Explain.getText());
         dialog.setTitle("Sửa nghĩa");
         dialog.setHeaderText("Sửa nghĩa của từ ở đây:");
@@ -206,6 +181,7 @@ public class Controller implements Initializable  {
             }
         });
     }
+    
     public void HienThiCuaSoThem() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("them.fxml"));
         Stage primaryStage = new Stage();
@@ -216,5 +192,9 @@ public class Controller implements Initializable  {
         lWord.listWord.clear();
         mana.insertFromFile(lWord);
         typeWord();
+    }
+    
+        public void API() throws IOException {
+        Explain.setText(API.translate("en", "vi", TuTiengAnh.getText()));
     }
 }
