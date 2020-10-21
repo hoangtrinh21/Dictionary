@@ -31,10 +31,10 @@ public class DictionaryManagement {
         while (scanner.hasNext()) {
             while (scanner.hasNextLine()) {
                 Word x = new Word();
-                String s = scanner.nextLine();
-                String[] word = s.split("\\t", 2);
-                x.setWordTarget(word[0]);
-                x.setWordExplain(word[1]);
+                String tar = scanner.nextLine();
+                String ex = scanner.nextLine();
+                x.setWordTarget(tar);
+                x.setWordExplain(ex);
                 list.listWord.add(x);
             }
         }
@@ -103,7 +103,7 @@ public class DictionaryManagement {
         Collections.sort(list.listWord, Comparator.comparing(Word::getWordTarget));
         PrintWriter printWriter=new PrintWriter("src/sample/dictionaries.txt","UTF-8");
         for(int i=0;i<list.listWord.size();i++){
-            printWriter.println(list.listWord.get(i).getWordTarget().toLowerCase()+'\t'+list.listWord.get(i).getWordExplain().toLowerCase());
+            printWriter.println(list.listWord.get(i).getWordTarget().toLowerCase()+'\n'+list.listWord.get(i).getWordExplain().toLowerCase());
         }
         printWriter.close();
     }
