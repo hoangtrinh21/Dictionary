@@ -1,0 +1,79 @@
+	
+ally	đồng minh
+ally	đồng minh
+and	them
+and	them
+ant	con kiến
+ant	con kiến
+bad	tồi
+bad	tồi
+ball	quả bóng
+ball	quả bóng
+beautiful	đẹp
+beautiful	đẹp
+bird	con chim
+bird	con chim
+blow	thổi
+blow	thổi
+bye	tạm biệt
+bye	tạm biệt
+call	gọi
+call	gọi
+clock	đồng hồ
+clock	đồng hồ
+computer	máy tính
+computer	máy tính
+end	kết thúc
+end	kết thúc
+enemy	kẻ thù
+enemy	kẻ thù
+evening	buổi chiều
+evening	buổi chiều
+fan	quạt
+fan	quạt
+fast	nhanh
+fast	nhanh
+father	bố
+father	bố
+girl	con gái
+girl	con gái
+good	tốt
+good	tốt
+hello	xin chào
+hello	xin chào
+high	cao
+high	cao
+jump	nhảy
+jump	nhảy
+lion	con sư tử
+lion	con sư tử
+love	yêu
+love	yêu
+math	toán học
+math	toán học
+morning	buổi sáng
+morning	buổi sáng
+mother	mẹ
+mother	mẹ
+new	mới
+new	mới
+night	buổi tối
+night	buổi tối
+old	cũ
+old	cũ
+phone	điện thoại
+phone	điện thoại
+short	ngắn
+short	ngắn
+sleep	ngủ
+sleep	ngủ
+son	con trai
+son	con trai
+study	học
+study	học
+swim	bơi
+swim	bơi
+technology	công nghệ
+technology	công nghệ
+tiger	con hổ
+tiger	con hổ
